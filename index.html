@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список задач</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header class="card__header">
+      <h1>Список задач</h1>
+      <p class="counter" id="counter">Нет задач</p>
+    </header>
+
+    <form class="add-form" id="add-form" autocomplete="off">
+      <input
+        type="text"
+        id="task-input"
+        class="add-form__input"
+        placeholder="Что нужно сделать?"
+        maxlength="200"
+        aria-label="Новая задача"
+        required
+      >
+      <button type="submit" class="add-form__button">Добавить</button>
+    </form>
+
+    <div class="filters" role="tablist" aria-label="Фильтр задач">
+      <button class="filters__btn is-active" data-filter="all" role="tab">Все</button>
+      <button class="filters__btn" data-filter="active" role="tab">Активные</button>
+      <button class="filters__btn" data-filter="done" role="tab">Выполненные</button>
+    </div>
+
+    <ul class="task-list" id="task-list" aria-live="polite"></ul>
+
+    <p class="empty" id="empty">Задач пока нет — добавьте первую ✨</p>
+
+    <footer class="card__footer">
+      <button class="link-btn" id="clear-done" type="button">Удалить выполненные</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
